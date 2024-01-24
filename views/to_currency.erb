@@ -1,0 +1,10 @@
+<h1>Convert <%= @original_currency %> to <%= @destination_currency %></h1>
+
+
+<ul>
+    <% @currencies_hash.each do |abbreviation, currency| %>
+      <li>
+        <a href = "/dynamic/:from_currency/:to_currency">Convert <%= @original_currency %> to <%= abbreviation%>...</a>
+      </li>
+    <% end %>
+</ul> %>
