@@ -1,10 +1,10 @@
 <h1>Convert <%= @original_currency %></h1>
-Go <a href = "/:from_currency">back</a>.
+Go <a href = "/#{@original_currency}">back</a>.
 
 <ul>
     <% @currencies_hash.each do |abbreviation, currency| %>
       <li>
-        <a href = "/:from_currency/:to_currency">Convert <%= @original_currency %> to <%= abbreviation%>...</a>
+        <a href = "/<%= @original_currency %>/<%= abbreviation %>">Convert <%= @original_currency %> to <%= abbreviation%>...</a>
       </li>
     <% end %>
 </ul> %>

@@ -28,7 +28,7 @@ get("/") do
   erb(:homepage)
 end
 
-get("/dynamic/:from_currency") do
+get("/:from_currency") do
   @original_currency = params.fetch("from_currency")
 
   api_url = "http://api.exchangerate.host/list?access_key=#{exchange_rates_key}"
@@ -49,7 +49,7 @@ get("/dynamic/:from_currency") do
   erb(:from_currency)
 end
 
-get("/dynamic/:from_currency/:to_currency") do
+get("/:from_currency/:to_currency") do
   @original_currency = params.fetch("from_currency")
   @destination_currency = params.fetch("to_currency")
 
@@ -65,7 +65,7 @@ get("/dynamic/:from_currency/:to_currency") do
   parsed_data = JSON.parse(raw_data_string)
 
   # get the symbols from the JSON
-  @currencies_hash = parsed_data.fetch("currencies")
+  @currencies_hash = parsed_data.fetch("info")
 
   # render a view template where I show the symbols
   erb(:to_currency)

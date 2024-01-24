@@ -4,7 +4,7 @@
 <ul>
     <% @currencies_hash.each do |abbreviation, currency| %>
       <li>
-        <a href = "/dynamic/:from_currency">Convert <%= abbreviation%> to...</a>
+        <a href = "/<%= abbreviation %>">Convert <%= abbreviation%> to...</a>
       </li>
     <% end %>
 </ul> %>
